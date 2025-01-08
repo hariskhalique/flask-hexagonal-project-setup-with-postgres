@@ -80,11 +80,16 @@ Run the following commands to set up the database:
 ```
 flask db init
 ```
-2. Generate Migration Scripts:
+2. Update code in .env file in migration folder
+```
+def get_metadata():
+    return database.Base.metadata
+```
+3. Generate Migration Scripts:
 ```
 flask db migrate -m "Initial migration"
 ```
-3. Apply Migrations:
+4. Apply Migrations:
 ```
 flask db upgrade
 ```
